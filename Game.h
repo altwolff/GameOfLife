@@ -1,12 +1,11 @@
 #include <ncursesw/curses.h>
 #include <cstdlib>
-#include <iostream>
 
 class Game{
     WINDOW *screen;
     int height, width, startxres, startyres, xres, yres, speed = 200;
-    bool exit = false;
-    int board [20][40] = {};
+    bool exit = false, pause = false;
+    int board [20][40] = {0};
     void initialise();
     void mainmenu();
     chtype getinput();
