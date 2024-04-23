@@ -80,17 +80,11 @@ void Game::useinput() {
                 int x = event.x - startxres;
 
                 if (y >= 0 && y < height && x >= 0 && x < width) {
-                    // Toggle cell state on mouse click
                     board[y][x] = (board[y][x] == 1) ? 0 : 1;
-                    //mvwaddch(screen, y, x, (board[y][x] == 1) ? '0' : ' ');
                     mvwaddstr(screen, 0, 2, std::string("--").c_str());
                     mvwaddstr(screen, 0, 6, std::string("--").c_str());
                     mvwaddstr(screen, 0, 2, std::to_string(x).c_str());
                     mvwaddstr(screen, 0, 6, std::to_string(y).c_str());                   
-					//mvwaddch(screen, 0, 2, x);
-                    //mvwaddch(screen, 0, 3, y);
-                   	//mvprintw(0, 2, std::to_string(x).c_str());
-                	// mvwaddch(screen, 0, 2, (board[x][y] == 1) ? '0' : ' ');
                 }
             }
             break;
